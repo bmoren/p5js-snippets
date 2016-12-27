@@ -10,22 +10,9 @@ if(file == undefined){
 console.log('converting ' + file  + ' ...')
 
 var source = fs.readFileSync( file, 'utf-8');
-
-
-
-// parser(options:{'parseJsDocTags':true});
 var comments = parser(source);
+var out = {".source.js": {}}
 // console.log(comments)
-
-  // for (var i = 0; i < comments.length; i++) {
-  //   console.log("~+~+~+~+~+~+~+~")
-  //
-  //   name = comments[i].tags
-  //
-  // }
-    console.log("~+~+~+~+~+~+~+~")
-
-    // name = comments[50].tags
 
 
     // var PICKER = Math.round(Math.random() * comments.length);
@@ -39,7 +26,7 @@ var comments = parser(source);
 
     //grab the tags and assemble the autocomplete
     for (var i = 0; i < comments[PICKER].tags.length; i++) {
-      console.log("~+~+~+~+~+~+~+~")
+      // console.log("~+~+~+~+~+~+~+~")
 
       // console.log(      comments[PICKER].tags[i] )
       if(comments[PICKER].tags[i].tag == 'param'){
@@ -96,14 +83,15 @@ var comments = parser(source);
 
     console.log(entry)
     console.log("~+~+~+~+~+~+~+~")
-
+    fs.appendFileSync(__dirname + "/p5js-snippets.cson", JSON.stringify(entry) + ',')
 
   }
 
 
+
  //check out fs.appendFile / appendFileSync for generating the file on the fly.
 
- // fs.writeFile(__dirname + "/p5js-snippets.cson", comments, function(err) {
+ // fs.writeFile(__dirname + "/p5js-snippets.cson", out, function(err) {
  //     if(err) {
  //         return console.log(err);
  //     }
