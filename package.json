@@ -12,9 +12,9 @@
   "author": "@bmoren",
   "license": "MIT",
   "dependencies": {
+    "comment-parser": "^0.4.0",
     "comments-parser": "^1.0.0",
     "install": "^0.8.4",
-    "jsdoc3-parser": "^1.1.0",
     "npm": "^4.0.5"
   }
 }
