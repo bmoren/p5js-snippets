@@ -26,14 +26,16 @@ var comments = parser(source);
     console.log("~+~+~+~+~+~+~+~")
 
     // name = comments[50].tags
-    var params = [];
-    var concatedName;
-    var name;
-    var type;
 
-    var PICKER = Math.round(Math.random() * comments.length);
-    console.log( comments[PICKER] )
 
+    // var PICKER = Math.round(Math.random() * comments.length);
+    // console.log( comments[PICKER] )
+
+    for (var PICKER = 0; PICKER < comments.length; PICKER++) {
+      var params = [];
+      var concatedName;
+      var name;
+      var type;
 
     //grab the tags and assemble the autocomplete
     for (var i = 0; i < comments[PICKER].tags.length; i++) {
@@ -55,8 +57,8 @@ var comments = parser(source);
       concatedName = name
     }
 
-    console.log(concatedName)
-    console.log(params)
+    // console.log(concatedName)
+    // console.log(params)
 
     var entry =  {} //create the JSON object for the snippet to live in.
       //set the name
@@ -93,39 +95,10 @@ var comments = parser(source);
       entry[concatedName].descriptionMoreURL = 'http://p5js.org/reference/#/p5/' + name
 
     console.log(entry)
-    // 'attr($name, $value = null)':
-    //   'rightLabelHTML': '<span style="color:white;transform:rotate(-90deg);display:inline-block;font-weight:400;font-size:1.25em">K</span>'
-    //   'prefix': 'attr()       '
-    //   'body': 'attr(${1:$name}, ${2:$value = null})${3}'
-    //   'leftLabel': 'Helpers'
-    //   'description': 'Creates attributes for an HTML tag'
-    //   'descriptionMoreURL': 'https://getkirby.com/docs/cheatsheet/helpers/attr'
+    console.log("~+~+~+~+~+~+~+~")
 
 
-
-  // console.log(name)
-  // console.log(params)
-  // console.log(name + '(' + params + ')')
-
-
-
-/*
-'.source.js':
-   'fancy console.log':
-     'prefix': 'log'
-     'body': 'console.log(${2:"$1"}) $3'
-
-
-'attr($name, $value = null)':
-  'rightLabelHTML': '<span style="color:white;transform:rotate(-90deg);display:inline-block;font-weight:400;font-size:1.25em">K</span>'
-  'prefix': 'attr()       '
-  'body': 'attr(${1:$name}, ${2:$value = null})${3}'
-  'leftLabel': 'Helpers'
-  'description': 'Creates attributes for an HTML tag'
-  'descriptionMoreURL': 'https://getkirby.com/docs/cheatsheet/helpers/attr'
- */
-
-
+  }
 
 
  //check out fs.appendFile / appendFileSync for generating the file on the fly.
