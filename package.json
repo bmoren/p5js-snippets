@@ -1,9 +1,15 @@
 {
   "name": "p5js-snippets",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "p5.js snippets | http://p5js.org ",
   "keywords": [
-    "p5js", "p5xjs", "processing", "creative", "p5", "syntax", "autocomplete"
+    "p5js",
+    "p5xjs",
+    "processing",
+    "creative",
+    "p5",
+    "syntax",
+    "autocomplete"
   ],
   "engines": {
     "atom": ">=1.0.0"
