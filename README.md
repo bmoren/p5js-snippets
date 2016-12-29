@@ -9,6 +9,7 @@
   + a link to the p5.js reference
   + tab breakpoints at each p5.js function's arguments
   + friendly p5 logo to help you see what is a p5 function
+  
 ---
 
 p5js-snippets version should be the same as the p5.js version it is compiled for
