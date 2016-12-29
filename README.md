@@ -1,7 +1,7 @@
 # p5js-snippets
 [p5.js](http://p5.js) snippets for [atom.io](http://atom.io)
 
-![screenshot.png](screenshot.png)
+![screenshot.png](https://raw.github.com/bmoren/p5js-snippets/master/screenshot.png)
 
 ### features include:
   + auto complete
