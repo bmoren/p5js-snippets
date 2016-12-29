@@ -11,8 +11,13 @@ console.log('converting ' + file  + ' ...')
 
 var source = fs.readFileSync( file, 'utf-8');
 var comments = parser(source);
-var out = {".source.js": {}}
+// var out = {".source.js": {}}
+var out;
+var entry = {} //create the JSON object for the snippet to live in.
 // console.log(comments)
+console.log('deleting old file...');
+fs.writeFileSync(__dirname + "/../snippets/p5js-snippets.json",'')
+console.log('Writing new file...');
 
 
     // var PICKER = Math.round(Math.random() * comments.length);
@@ -29,12 +34,18 @@ var out = {".source.js": {}}
       // console.log("~+~+~+~+~+~+~+~")
 
       // console.log(      comments[PICKER].tags[i] )
-      if(comments[PICKER].tags[i].tag == 'param'){
-        params.push(comments[PICKER].tags[i].name)
-      }
-      if( comments[PICKER].tags[i].tag == 'method' || comments[PICKER].tags[i].tag == 'property' ){
+
+      if( comments[PICKER].tags[i].tag == 'method'
+      || comments[PICKER].tags[i].tag == 'property'
+      // || comments[PICKER].tags[i].tag == 'class'
+      && comments[PICKER].tags[i].name ){
         type = comments[PICKER].tags[i].tag
         name = comments[PICKER].tags[i].name
+
+      }
+
+      if(comments[PICKER].tags[i].tag == 'param'){
+        params.push(comments[PICKER].tags[i].name)
       }
 
     }
@@ -47,20 +58,21 @@ var out = {".source.js": {}}
     // console.log(concatedName)
     // console.log(params)
 
-    var entry =  {} //create the JSON object for the snippet to live in.
       //set the name
       entry[concatedName] = {
           'rightLabelHTML': '<span style="color:#ed225d;display:inline-block;font-weight:400;font-size:1.25em">p5</span>',
-          'prefix': 0,
-          'body': 0,
-          'description': 0,
-          'descriptionMoreURL': 0,
+          'leftLabel': null,
+          'prefix': null,
+          'body': null,
+          'description': null,
+          'descriptionMoreURL': null,
       }
       //set the prefix & body
       if(type == 'method'){
-        entry[concatedName].prefix = name + '()'
+        entry[concatedName].prefix = name + '(' + params + ')'
+        entry[concatedName].leftLabel = name + '()'
         entry[concatedName].body = name + '('
-
+        //tab moving part of the snippet
         for (var i = 0; i < params.length; i++) {
           if(params.length <= 1 || i == params.length-1){
             entry[concatedName].body += '${' +(i+1)+ ':' + params[i] +'}'
@@ -73,6 +85,7 @@ var out = {".source.js": {}}
 
       }else{
         entry[concatedName].prefix = name
+        entry[concatedName].leftLabel = name
         entry[concatedName].body = name
 
       }
@@ -81,21 +94,14 @@ var out = {".source.js": {}}
       entry[concatedName].description = comments[PICKER].description.substring(0,100) + '...'
       entry[concatedName].descriptionMoreURL = 'http://p5js.org/reference/#/p5/' + name
 
-    console.log(entry)
-    console.log("~+~+~+~+~+~+~+~")
-    fs.appendFileSync(__dirname + "/p5js-snippets.cson", JSON.stringify(entry) + ',')
+    // console.log("~+~+~+~+~+~+~+~")
 
   }
+  delete entry.undefined
+  console.log(entry)
+  var out = {".source.js": null} //add the js header the to top and wrap the whole thing in an object
+  out[".source.js"] = entry;
+  fs.writeFileSync(__dirname + "/../snippets/p5js-snippets.json", JSON.stringify(out))
+  console.log('Finished Writing File...');
 
-
-
- //check out fs.appendFile / appendFileSync for generating the file on the fly.
-
- // fs.writeFile(__dirname + "/p5js-snippets.cson", out, function(err) {
- //     if(err) {
- //         return console.log(err);
- //     }
- //
- //     console.log("p5js-snippets.cson exported!");
- // });
 

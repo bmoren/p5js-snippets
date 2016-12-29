@@ -1,0 +1,14 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'p5js-snippets'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'p5js-snippets:toggle'
+        }
+      ]
+    ]
+  }
+]
