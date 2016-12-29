@@ -98,9 +98,10 @@ console.log('Writing new file...');
 
   }
   delete entry.undefined
-  console.log(entry)
+  // console.log(entry)
   var out = {".source.js": null} //add the js header the to top and wrap the whole thing in an object
   out[".source.js"] = entry;
+  // console.log(out);
   fs.writeFileSync(__dirname + "/../snippets/p5js-snippets.json", JSON.stringify(out))
   console.log('Finished Writing File...');
 
