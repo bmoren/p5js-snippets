@@ -1,14 +1,15 @@
 {
   "name": "p5js-snippets",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "p5.js snippets | http://p5js.org ",
   "keywords": [
     "p5js"
   ],
-  "engines": {"atom": ">=1.0.0"},
+  "engines": {
+    "atom": ">=1.0.0"
+  },
   "author": "@bmoren",
   "repository": "https://github.com/bmoren/p5js-snippets",
   "license": "MIT",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
