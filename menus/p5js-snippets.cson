@@ -1,14 +1,24 @@
-'menu': [
-  {
-    'label': 'Packages'
-    'submenu': [
-      'label': 'p5js-snippets'
-      'submenu': [
+{  
+  'context-menu': {
+      'atom-text-editor': [
         {
-          'label': 'Toggle'
-          'command': 'p5js-snippets:toggle'
+          'label': 'Find in p5 Reference',
+          'command': 'sourcefetch:fetch'
         }
       ]
-    ]
-  }
-]
+    },
+  'menu': [
+    {
+      'label': 'Packages'
+      'submenu': [
+        'label': 'p5js-snippets'
+        'submenu': [
+          {
+            'label': 'Toggle'
+            'command': 'p5js-snippets:toggle'
+          }
+        ]
+      ]
+    }
+  ]
+}
