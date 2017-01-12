@@ -5,13 +5,13 @@
 
 ### features include:
   + auto complete
-  + a short description of each p5.js function
-  + a link to the p5.js reference
-  + tab breakpoints at each p5.js function's arguments
-  + friendly p5 logo to help you see what is a p5 function
-  + right click p5 functions and look up the reference
+  + a short description of each p5 function
+  + 'More...' link to the p5 reference
+  + tab breakpoints at each p5 function's arguments
+  + friendly p5 logo to help distinguish p5 specific functions
+  + right click p5 functions for a contextual menu to look it up in the reference
 
-Don't forget to restart atom after install. 
+Don't forget to restart atom after install.
 
 ---
 
