@@ -9,6 +9,7 @@
   + a link to the p5.js reference
   + tab breakpoints at each p5.js function's arguments
   + friendly p5 logo to help you see what is a p5 function
+  + right click p5 functions and look up the reference
 
 Don't forget to restart atom after install. 
 

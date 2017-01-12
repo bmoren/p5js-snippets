@@ -2,6 +2,7 @@
   "name": "p5js-snippets",
   "version": "0.2.1",
   "description": "p5.js snippets | http://p5js.org ",
+  "main": "./lib/sourcefetch",
   "keywords": [
     "p5js",
     "p5xjs",
@@ -14,8 +15,12 @@
   "engines": {
     "atom": ">=1.0.0"
   },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "google": "^2.0.0",
+    "request": "^2.73.0"
+  },
   "author": "@bmoren",
   "repository": "https://github.com/bmoren/p5js-snippets",
-  "license": "MIT",
-  "dependencies": {}
+  "license": "MIT"
 }
