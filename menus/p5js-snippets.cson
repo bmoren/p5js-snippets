@@ -1,12 +1,4 @@
 {  
-  'context-menu': {
-      'atom-text-editor': [
-        {
-          'label': 'Find in p5 Reference',
-          'command': 'sourcefetch:fetch'
-        }
-      ]
-    },
   'menu': [
     {
       'label': 'Packages'
