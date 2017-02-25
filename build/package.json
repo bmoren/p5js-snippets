@@ -10,6 +10,7 @@
   "repository": "https://github.com/bmoren/p5js-snippets",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "he": "^1.1.1"
   }
 }

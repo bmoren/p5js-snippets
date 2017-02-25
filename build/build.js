@@ -1,5 +1,6 @@
 var request = require('request');
 var fs = require('fs');
+var he = require('he');
 
 var p5url = 'https://raw.githubusercontent.com/processing/p5.js-website/master/dist/reference/data.json'
 
@@ -75,13 +76,14 @@ request(p5url, function (error, response, body) {
           cleanDes = element.description
           // console.log(element.description.toString());
           cleanDes = cleanDes.replace(/(<p>)|(<\/p>)|(<br>)/g,"") //remove p and br tags
-          cleanDes  = cleanDes.replace(/(&lt;)/g,"<") //ascii to less than
-          cleanDes  = cleanDes.replace(/(&gt;)/g,">") //ascii to greater than
+          // cleanDes  = cleanDes.replace(/(&lt;)/g,"<") //ascii to less than
+          // cleanDes  = cleanDes.replace(/(&gt;)/g,">") //ascii to greater than
+          cleanDes = he.decode(cleanDes)
           cleanDes = cleanDes.substring(0,90)
           snippet[concatedName].description = cleanDes + ' ...'
 
         }else{
-          snippet[concatedName].description =""
+          snippet[concatedName].description = ""
         }
 
         snippet[concatedName].descriptionMoreURL = 'http://p5js.org/reference/#/p5/' + name
