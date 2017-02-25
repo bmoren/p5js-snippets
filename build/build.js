@@ -78,7 +78,7 @@ request(p5url, function (error, response, body) {
           cleanDes = cleanDes.replace(/(<p>)|(<\/p>)|(<br>)/g,"") //remove p and br tags
           // cleanDes  = cleanDes.replace(/(&lt;)/g,"<") //ascii to less than
           // cleanDes  = cleanDes.replace(/(&gt;)/g,">") //ascii to greater than
-          cleanDes = he.decode(cleanDes)
+          cleanDes = he.decode(cleanDes) //use he to decode all html codes into characters
           cleanDes = cleanDes.substring(0,90)
           snippet[concatedName].description = cleanDes + ' ...'
 
