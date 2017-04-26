@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "sourcefetch:fetch"
+    "ctrl-alt-f": "sourcefetch:fetch"
   }
 }
