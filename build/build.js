@@ -26,8 +26,22 @@ request(p5url, function (error, response, body) {
         var params = []
         if(element.params){
           element.params.forEach(function(p){
-            params.push(p.name)
+              handleParams(p);
           })
+        }
+
+        if(element.overloads){
+          element.overloads[0].params.forEach(function(p){
+            handleParams(p);
+          })
+        }
+
+        function handleParams(p){
+          if(p.optional){
+            params.push("[" + p.name + "]")
+          }else{
+            params.push(p.name)
+          }
         }
 
         if(element.itemtype == 'method'){
@@ -76,11 +90,19 @@ request(p5url, function (error, response, body) {
           cleanDes = element.description
           // console.log(element.description.toString());
           cleanDes = cleanDes.replace(/(<p>)|(<\/p>)|(<br>)/g,"") //remove p and br tags
+          cleanDes = cleanDes.replace(/\r?\n|\r/g," ") //remove newlines
+
           // cleanDes  = cleanDes.replace(/(&lt;)/g,"<") //ascii to less than
           // cleanDes  = cleanDes.replace(/(&gt;)/g,">") //ascii to greater than
           cleanDes = he.decode(cleanDes) //use he to decode all html codes into characters
-          cleanDes = cleanDes.substring(0,90)
-          snippet[concatedName].description = cleanDes + ' ...'
+          if(cleanDes.length > 230 ){
+            // cleanDes = cleanDes.substring(0, chopLength )
+            cleanDes = cleanDes.replace(/^(.{230}[^\s]*).*/, "$1")
+            snippet[concatedName].description = cleanDes + ' ...'
+          }else{
+            snippet[concatedName].description = cleanDes
+          }
+
 
         }else{
           snippet[concatedName].description = ""
