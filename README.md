@@ -19,5 +19,5 @@ p5js-snippets was last compiled for p5.js@0.5.16
 
 to build the snippets from https://p5js.org/reference/data.json:
  + `cd` to `build`
- + `node build.js
+ + `node build.js`
 
