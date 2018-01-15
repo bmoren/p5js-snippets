@@ -17,7 +17,7 @@ Don't forget to restart atom after install.
 
 p5js-snippets was last compiled for p5.js@0.5.16
 
-to build the snippets from the p5.js yuidoc:
+to build the snippets from https://p5js.org/reference/data.json:
  + `cd` to `build`
- + `node build.js /path/to/p5.js`
+ + `node build.js
 
