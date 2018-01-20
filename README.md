@@ -4,18 +4,18 @@
 ![screenshot.png](https://raw.github.com/bmoren/p5js-snippets/master/screenshot.png)
 
 ### features include:
-  + auto complete
+  + auto complete suggestions
   + a short description of each p5 function
   + 'More...' link to the p5 reference
   + tab breakpoints at each p5 function's arguments
   + friendly p5 logo to help distinguish p5 specific functions
-  + right click p5 functions for a contextual menu to look it up in the reference
+  + right click p5js functions within your sketch, and use the contextual menu to `Find in the p5js reference`
 
 Don't forget to restart atom after install.
 
 ---
 
-p5js-snippets was last compiled for p5.js@0.5.16
+p5js-snippets was last compiled for p5.js@ 0.6.0
 
 to build the snippets from https://p5js.org/reference/data.json:
  + `cd` to `build`
