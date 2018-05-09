@@ -15,7 +15,13 @@
   "engines": {
     "atom": ">=1.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "he": "^1.1.1",
+    "path": "^0.12.7",
+    "request": "^2.85.0",
+    "shell": "^0.5.0"
+  },
   "author": "@bmoren",
   "repository": "https://github.com/bmoren/p5js-snippets",
   "license": "MIT"
