@@ -2,7 +2,7 @@ var request = require('request');
 var fs = require('fs');
 var he = require('he');
 
-var p5url = 'https://raw.githubusercontent.com/processing/p5.js-website/master/dist/reference/data.json'
+var p5url = 'https://p5js.org/reference/data.json'
 
 var snippet = {} //to build the snippets from the source json file
 
