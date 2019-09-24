@@ -15,7 +15,7 @@ Don't forget to restart atom after install.
 
 ---
 
-p5js-snippets was last compiled for p5.js@ 0.7.3
+p5js-snippets was last compiled for p5.js@ 0.9.0
 
 to build the snippets from https://p5js.org/reference/data.json:
  + `cd` to `build`
