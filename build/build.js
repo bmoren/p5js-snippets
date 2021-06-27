@@ -22,6 +22,7 @@ request(p5url, function (error, response, body) {
       if(element.itemtype == 'property' || element.itemtype == 'method' ){
 
         var name = element.name
+        var class_name = element.class
         var concatedName
         var params = []
         if(element.params){
@@ -108,7 +109,7 @@ request(p5url, function (error, response, body) {
           snippet[concatedName].description = ""
         }
 
-        snippet[concatedName].descriptionMoreURL = 'http://p5js.org/reference/#/p5/' + name
+        snippet[concatedName].descriptionMoreURL = 'http://p5js.org/reference/#/' + class_name + '/' + name
 
 
 
